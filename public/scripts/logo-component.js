@@ -2,7 +2,7 @@ export function logoComponent(element) {
     const div = document.getElementById(element)
     div.classList = 'flex items-center gap-1'
     div.innerHTML = `
-        <img src="/public/logo.svg" alt="logo" width="38">
+        <img src="/public/assets/images/logo.svg" alt="logo" width="38">
         <div>
             <p class="text-[.75rem] text-body-600 font-semibold">
                 Department of Computer Science
