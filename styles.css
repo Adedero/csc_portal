@@ -2065,7 +2065,7 @@ video {
 }
 
 .h-screen{
-  height: 100vh;
+  height: 100dvh;
 }
 
 .w-10{
