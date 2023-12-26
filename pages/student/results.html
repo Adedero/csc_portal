@@ -84,32 +84,32 @@
                 <!-- Additional styles in student.css -->
                 <h1 class="text-lg text-body-300 font-semibold">Results</h1>
                 <h1 class="text-secondary-800 font-semibold mt-5">View Results</h1>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 w-full flex-wrap">
                     <div class="select">
-                        <select name="session" id="session" title="session">
+                        <select name="session" id="session" title="session" class="rounded">
                             <option value="0">Select Session</option>
                             <option value="2018-2019">2018-2019</option>
                         </select>
                     </div>
                     <!-- Add a disabled attribute to this select element if the user hasn't selected a session -->
                     <div class="select">
-                        <select name="semester" id="semester" title="semester">
+                        <select name="semester" id="semester" title="semester" class="rounded">
                             <option value="0">Select Semester</option>
                             <option value="1">Harmattan</option>
                             <option value="2">Rain</option>
                         </select>
                     </div>
-                    <!-- Add a disabled attribute to this select element if the user hasn't selected a session -->
+                    <!--  -->
 
                     <!-- Add a disabled attribute to this button element if the user hasn't selected a semester -->
                     <div>
                         <button
                         type="button"
-                        class="btn text-white bg-[var(--primary)] rounded hover:bg-[var(--primary-700)] text-sm">
+                        class="btn text-white bg-[var(--primary)] rounded hover:bg-[var(--primary-700)] text-sm p-[.3rem]">
                             Search
                         </button>
                     </div>
-                    <!-- Add a disabled attribute to this button element if the user hasn't selected a semester -->
+                    <!--  -->
                 </div>
                 <div id="view-results-container" class="flex flex-col gap-5 overflow-y-scroll">
                     <div id="student-table-container" class="overflow-scroll">

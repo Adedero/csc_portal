@@ -1192,9 +1192,9 @@ button:disabled:hover {
 .file-input>input {
   display: block;
   border: 1px solid var(--primary);
-  padding: .5rem .85rem;
+  padding: .4rem .75rem;
+  font-size: .85rem;
   font-weight: 600;
-  font-weight: 1rem;
   line-height: 1.5rem;
   color: var(--body);
   background-color: var(--white);
@@ -2065,7 +2065,7 @@ video {
 }
 
 .h-screen{
-  height: 100dvh;
+  height: 100vh;
 }
 
 .w-10{
@@ -2181,6 +2181,10 @@ video {
 
 .flex-col{
   flex-direction: column;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .items-start{
@@ -2326,6 +2330,11 @@ video {
 
 .bg-\[var\(--primary-50\)\]{
   background-color: var(--primary-50);
+}
+
+.bg-blue-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
 .bg-white{

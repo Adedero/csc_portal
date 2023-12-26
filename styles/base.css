@@ -1183,14 +1183,15 @@ button:disabled:hover {
 .file-input>input {
     display: block;
     border: 1px solid var(--primary);
-    padding: .5rem .85rem;
+    padding: .4rem .75rem;
+    font-size: .85rem;
     font-weight: 600;
-    font-weight: 1rem;
     line-height: 1.5rem;
     color: var(--body);
     background-color: var(--white);
     outline: none;
 }
+
 
 .select>select:disabled,
 .file-input>select:disabled {
