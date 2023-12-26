@@ -1235,17 +1235,17 @@ button:disabled:hover {
           appearance: none;
   width: 20px;
   aspect-ratio: 1/1;
-  background: url(/src/assets/checkboxes/checkbox-unchecked.svg);
+  background: url(/public/assets/checkboxes/checkbox-unchecked.svg);
   background-repeat: no-repeat;
 }
 
 .checkbox:checked {
-  background: url(/src/assets/checkboxes/checkbox-checked.svg);
+  background: url(/public/assets/checkboxes/checkbox-checked.svg);
   background-repeat: no-repeat;
 }
 
 .checkbox:disabled {
-  background: url(/src/assets/checkboxes/checkbox-disabled.svg);
+  background: url(/public/assets/checkboxes/checkbox-disabled.svg);
   background-repeat: no-repeat;
   cursor: not-allowed;
 }
@@ -1257,17 +1257,17 @@ button:disabled:hover {
           appearance: none;
   width: 15px;
   aspect-ratio: 1/1;
-  background: url(/src/assets/checkboxes/checkbox-small-unchecked.svg);
+  background: url(/public/assets/checkboxes/checkbox-small-unchecked.svg);
   background-repeat: no-repeat;
 }
 
 .checkbox-sm:checked {
-  background: url(/src/assets/checkboxes/checkbox-small-checked.svg);
+  background: url(/public/assets/checkboxes/checkbox-small-checked.svg);
   background-repeat: no-repeat;
 }
 
 .checkbox-sm:disabled {
-  background: url(/src/assets/checkboxes/checkbox-small-disabled.svg);
+  background: url(/public/assets/checkboxes/checkbox-small-disabled.svg);
   background-repeat: no-repeat;
   cursor: not-allowed;
 }
