@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/public/logo.svg" />
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/petite-vue" defer init></script>
+  <title>CSC Portal - FUTO</title>
+</head>
+<body>
+  <div id="overlay"></div>
+
+  <main class="w-screen h-screen flex center">
+
+    <div class="h-[25rem] w-96 flex flex-col gap-10 lg:shadow-lg lg:p-5 lg:rounded justify-center">
+
+      <div id="logo-component"></div>
+
+      <form id="login-form" class="flex flex-col gap-6 text-body-400">
+        
+        <div v-scope="{ isFocused: false }" class="flex flex-col relative">
+          <label
+          for="username"
+          :class="['absolute left-2  transition',
+          isFocused ? '-translate-y-[.75rem] bg-primary-50 px-2 text-sm font-semibold'
+          : 'top-[.75rem]']">
+            Username
+          </label>
+
+          <input
+          class="input rounded h-12"
+          @focus="isFocused = true"
+          @blur="$el.value === '' ? isFocused = false : true"
+          type="text" id="username" name="username">
+        </div>
+
+        <div 
+        v-scope="{ isFocused: false }"
+        class="flex flex-col relative">
+
+          <label
+          for="password"
+          :class="['absolute left-2  transition',
+          isFocused ? '-translate-y-[.75rem] bg-primary-50 px-2 text-sm font-semibold'
+          : 'top-[.75rem]']">
+            Password
+          </label>
+          <input
+          class="input rounded h-12"
+          @focus="isFocused = true"
+          @blur="$el.value === '' ? isFocused = false : true"
+          type="password" id="password" name="password">
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1">
+            <input type="checkbox" class="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+
+          <a href="#" class="hover:underline">Forgot password?</a>
+        </div>
+
+        <button
+        class="btn-primary bg-[var(--primary)] rounded h-12 transition"
+        type="submit"
+        class="rounded">Sign in</button>
+
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/main.js"></script>
+  <script type="module" src="/src/scripts/login.js"></script>
+</body>
+</html>

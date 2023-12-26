@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/public/logo.svg" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/src/styles/student/student.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <title>Student - Register Courses</title>
+</head>
+
+<body x-data="{navIsOpen: false, open: false, courseOpen: false}">
+    <div id="overlay"></div>
+
+    <main class="xl:flex">
+        <nav x-show="navIsOpen" x-transition x-on:click.outside="navIsOpen = false"
+            class="w-[16rem] h-screen overflow-hidden flex fixed flex-col gap-2 pl-2 pr-1 bg-white top-0 z-[999] shadow-2xl
+        xl:flex xl:overflow-y-scroll xl:relative xl:w-[16rem] shrink-0 xl:h-screen xl:shadow-none xl:border-r xl:border-r-slate-300">
+
+            <div class="xl:hidden">
+                <span x-on:click="navIsOpen = false" class="material-symbols-rounded cursor-pointer text-body-800 mt-3 hover:text-red-500 hover:font-semibold">
+                    close
+                </span>
+            </div>
+
+            <div class="h-12 pt-1 mb-2">
+                <div id="logo-component"></div>
+            </div>
+
+            <div id="nav">
+                <a href="./home.html"><span class="material-symbols-rounded">home</span>Home</a>
+                <a href="./courses.html" class="active"><span class="material-symbols-rounded">book_2</span>Courses</a>
+                <a href="./results.html"><span class="material-symbols-rounded">school</span>Results</a>
+                <a href="./profile.html"><span class="material-symbols-rounded">account_circle</span>Profile</a>
+                <a href="./settings.html"><span class="material-symbols-rounded">settings</span>Settings</a>
+                <a href="/index.html"><span class="material-symbols-rounded">logout</span>Logout</a>
+            </div>
+        </nav>
+
+        <section class="grow">
+            <header class="h-12 bg-white flex items-center justify-between p-2 fixed w-screen top-0 z-50
+            xl:relative xl:w-full">
+                <div class="flex items-center gap-2 xl:hidden">
+                    <span x-on:click="navIsOpen = true"
+                        class="material-symbols-rounded text-body-800 cursor-pointer hover:text-[var(--primary-700)] transition">
+                        menu
+                    </span>
+                    <img src="/public/logo.svg" alt="logo" width="30">
+                </div>
+
+                <div class="relative">
+                    <label for="search"
+                        class="material-symbols-rounded overflow-hidden absolute left-1 top-[.3rem] text-body-400 text-[1.4rem]">
+                        search
+                    </label>
+                    <input type="search" id="search" placeholder="Search..." class="rounded bg-[var(--primary-50)] text-body-400 outline-none h-8 w-full pl-7 pr-2 placeholder:text-[var(--body-200)]
+                    md:w-[30rem]">
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <img src="/src/assets/images/user.jpg" alt="user_img" class="w-8 rounded-full">
+
+                    <div class="hidden lg:block">
+                        <p class="text-xs font-semibold text-body-800 whitespace-nowrap text-ellipsis overflow-hidden">
+                            Student Name</p>
+                        <p class="text-xs text-body-300">Student email</p>
+                    </div>
+
+                    <div class="flex center">
+                        <span x-on:click="open = !open" x-text="open ? 'expand_less' : 'expand_more'"
+                            class="material-symbols-rounded text-body-800 cursor-pointer select-none hover:text-[var(--primary-700)]">
+                            expand_more
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <div id="app" class="mt-12 p-2 overflow-y-scroll relative
+            xl:mt-0">
+                <!-- Additional styles in student.css -->
+                <h1 class="text-lg text-body-300 font-semibold">Course Registration</h1>
+                <div
+                id="course-registration-container"
+                class="flex flex-col gap-5 overflow-y-scroll">
+                    <div class="text-sm text-body-300 flex items-center justify-between w-[100%] lg:w-[80%]">
+                        <p>Total units selected: 
+                            <span class="font-semibold">XX</span> 
+                            out of 
+                            <span class="font-semibold">YY</span> 
+                            max units
+                        </p>
+
+                        <a href="./course-registration-borrow-courses.html">
+                            <button type="button" class="btn bg-[var(--primary)] rounded text-white hover:bg-[var(--primary-700)] transition text-sm">
+                                Add/Borrow Courses
+                            </button>
+                        </a>
+                    </div>
+
+                    <div
+                    id="student-table-container"
+                    class="overflow-scroll">
+                        <table class="table w-[100%] lg:w-[80%] whitespace-nowrap">
+                            <thead>
+                                <th class="w-10">Select</th>
+                                <th class="w-20">Course Code</th>
+                                <th>Course Title</th>
+                                <th class="w-20">Units</th>
+                                <th class="w-20">Type</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox"></td>
+                                    <td class="uppercase">Course_Code</td>
+                                    <td>Course_Title</td>
+                                    <td>Units</td>
+                                    <td class="uppercase">compulsory</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex justify-end w-[100%] lg:w-[80%]">
+                        <button type="button" class="btn bg-[var(--primary)] text-white hover:bg-[var(--primary-700)] rounded">Register courses</button>
+                    </div>
+                </div>
+            </div>
+               
+            <div x-show="open" x-on:click.outside="open = false" x-transition id="student-details"
+                class="fixed top-12 right-0 bg-white flex flex-col gap-2 overflow-y-scroll w-80 p-2 shadow-lg">
+
+                <div class="rounded border border-slate-400 flex flex-col gap-4 items-center px-4 py-16">
+                    <img src="/src/assets/images/user.jpg" alt="user_img" class="w-32 rounded-full">
+
+                    <div class="flex flex-col items-center gap-1 text-center">
+                        <h1 class="text-body-800 text-2xl">
+                            Student Full Name
+                        </h1>
+                        <p class="text-slate-800">
+                            Student Reg Number
+                        </p>
+                        <p class="text-slate-600 text-sm">
+                            Class:
+                            <span class="font-semibold text-slate-800">
+                                20XX-20YY
+                            </span>
+                        </p>
+                        <p class="text-slate-600 text-sm">Advisor:
+                            <span class="font-semibold text-slate-800">
+                                Advisor Name
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-primary-50 rounded flex items-center justify-center p-1 gap-4">
+                    <div class="flex flex-col items-center justify-end">
+                        <p class="text-secondary-800 text-lg">20XX/20YY</p>
+                        <p class="text-body-300">session</p>
+                    </div>
+                    <span class="bg-secondary-800 w-[1px] h-10"></span>
+                    <div class="flex flex-col items-center justify-end">
+                        <p class="text-secondary-800 text-lg">Harmattan</p>
+                        <p class="text-body-300">semester</p>
+                    </div>
+                </div>
+
+                <div
+                    class="notice-card bg-primary-50 rounded w-full h-full pl-4 pr-14 pt-10 pb-4 flex flex-col justify-between items-start relative ">
+                    <p class="text-lg text-secondary-800 z-10">
+                        XX days left for course registration, register now to access your results
+                    </p>
+                    <a href="./course-registration.html">
+                        <button type="button"
+                            class="btn bg-[var(--primary)] rounded text-white hover:bg-[var(--primary-700)] transition text-sm">
+                            Register Courses
+                        </button>
+                    </a>
+                    <img src="/src/assets/images/frame.svg" alt="frame" class="absolute bottom-0 right-0 ">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script type="module" src="/main.js"></script>
+<script type="module" src="/src/scripts/student.js"></script>
+
+</html>
