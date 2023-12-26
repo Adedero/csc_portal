@@ -63,13 +63,19 @@
         </div>
 
         <button
+        onclick="login()"
         class="btn-primary bg-[var(--primary)] rounded h-12 transition"
-        type="submit"
+        type="button"
         class="rounded">Sign in</button>
 
       </form>
     </div>
   </main>
+  <script>
+    function login() {
+      window.location.href = "/src/views/student/home.html"
+    }
+  </script>
   <script type="module" src="/main.js"></script>
   <script type="module" src="/src/scripts/login.js"></script>
 </body>
