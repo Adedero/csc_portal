@@ -16,11 +16,11 @@
 }
 
 #details {
-    height: calc(100vh - 3rem);
+    height: calc(100dvh - 3rem);
 }
 
 #student-details {
-    height: calc(100vh - 3rem);
+    height: calc(100dvh - 3rem);
 }
 
 #course-registration-container {
@@ -33,7 +33,7 @@
 
 
 #view-results-container {
-    height: calc(100vh - 12.5rem)
+    height: calc(100dvh - 12.5rem)
 }
 
 #view-results-container > #student-table-container {
