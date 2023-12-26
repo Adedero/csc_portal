@@ -1,7 +1,7 @@
-import { showOverlay, hideOverlay } from './public/scripts/loader.js'
-import { overlay } from './public/scripts/overlay.js'
-import { logoComponent } from './public/scripts/logo-component.js'
-import { onNavPopup, onSidebarPopup } from './public/scripts/popup.js'
+import { showOverlay, hideOverlay } from './scripts/loader.js'
+import { overlay } from './scripts/overlay.js'
+import { logoComponent } from './scripts/logo-component.js'
+import { onNavPopup, onSidebarPopup } from './scripts/popup.js'
 
 overlay('overlay')
 showOverlay('overlay')
