@@ -301,7 +301,7 @@
                         <!-- If the course does not have practical -->
                     </div>
 
-                    <div style="height: calc(100vh - 22.5rem);" class="p-2 flex flex-col gap-2 shrink-0">
+                    <div style="height: calc(100dvh - 22.5rem);" class="p-2 flex flex-col gap-2 shrink-0">
                         <p class="text-sm font-semibold text-body-300">Course Description</p>
                         <div class="border border-slate-300 rounded overflow-y-scroll p-1 text-sm text-body-500">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sint vitae ut earum
@@ -326,7 +326,7 @@
                     </div>
 
                     <div class="px-3 grid center absolute bottom-4 left-[50%] -translate-x-[50%]">
-                        <button type="button" class="flex flex-col center text-secondary-800 font-semibold">
+                        <button @click="courseOpen = false" type="button" class="flex flex-col center text-secondary-800 font-semibold">
                             <span class="material-symbols-rounded overflow-hidden">expand_less</span>
                             <p class="text-sm -mt-2">close</p>
                         </button>
