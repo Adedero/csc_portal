@@ -214,7 +214,7 @@
                 </div>
 
                 <!-- This component is a popup that shows the full details of a course when the student clicks on the "view details button in the table of semester courses above. Please don't use a for loop here. Instead fetch the data everytime a button for a course is clicked" -->
-                <div id="student-course-details-home" x-show="" @click.outside="courseOpen = false"
+                <div id="student-course-details-home" x-show="courseOpen" @click.outside="courseOpen = false"
                     x-transition class="fixed h-[100dvh] w-[100dvw] top-0 right-0 p-4 bg-white flex flex-col gap-2 overflow-y-scroll z-50
                 md:shadow-lg
                 lg:border lg:border-slate-400">
