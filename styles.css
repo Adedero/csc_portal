@@ -2193,6 +2193,10 @@ video {
   height: 20rem;
 }
 
+.h-\[\]{
+  height: ;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -2283,6 +2287,10 @@ video {
 
 .w-\[95dvw\]{
   width: 95dvw;
+}
+
+.w-\[100dv\]{
+  width: 100dv;
 }
 
 .min-w-20{
