@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../../styles/student/student.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
     <title>Student - Home</title>
 </head>
 
@@ -16,16 +17,13 @@
     <div id="overlay"></div>
 
     <main class="xl:flex">
-        <nav
-        x-show="navIsOpen"
-        x-transition
-        x-on:click.outside="navIsOpen = false"
-        class="w-[16rem] h-screen overflow-hidden flex fixed flex-col gap-2 pl-2 pr-1 bg-white top-0 z-10 shadow-2xl
+        <nav x-show="navIsOpen" x-transition x-on:click.outside="navIsOpen = false"
+            class="w-[16rem] h-screen overflow-hidden flex fixed flex-col gap-2 pl-2 pr-1 bg-white top-0 z-10 shadow-2xl
         xl:flex xl:overflow-y-scroll xl:relative xl:w-[16rem] shrink-0 xl:h-screen xl:shadow-none xl:border-r xl:border-r-slate-300">
 
             <div class="xl:hidden">
-                <span
-                x-on:click="navIsOpen = false" class="material-symbols-rounded cursor-pointer text-body-800 mt-3 hover:text-red-500 hover:font-semibold">
+                <span x-on:click="navIsOpen = false"
+                    class="material-symbols-rounded cursor-pointer text-body-800 mt-3 hover:text-red-500 hover:font-semibold">
                     close
                 </span>
             </div>
@@ -45,22 +43,19 @@
         </nav>
 
         <section class="grow">
-            <header
-            class="h-12 bg-white flex items-center justify-between p-2 fixed w-screen top-0
+            <header class="h-12 bg-white flex items-center justify-between p-2 fixed w-screen top-0
             xl:relative xl:w-full">
                 <div class="flex items-center gap-2 xl:hidden">
-                    <span
-                    x-on:click="navIsOpen = true"
-                    class="material-symbols-rounded text-body-800 cursor-pointer hover:text-[var(--primary-700)] transition">
+                    <span x-on:click="navIsOpen = true"
+                        class="material-symbols-rounded text-body-800 cursor-pointer hover:text-[var(--primary-700)] transition">
                         menu
                     </span>
                     <img src="../../assets/images/logo.svg" alt="logo" width="26">
                 </div>
 
                 <div class="relative">
-                    <label
-                    for="search"
-                    class="material-symbols-rounded overflow-hidden absolute left-1 top-[.3rem] text-body-400 text-[1.4rem]">
+                    <label for="search"
+                        class="material-symbols-rounded overflow-hidden absolute left-1 top-[.3rem] text-body-400 text-[1.4rem]">
                         search
                     </label>
                     <input type="search" id="search" placeholder="Search..." class="rounded bg-[var(--primary-50)] text-body-400 outline-none h-8 w-full pl-7 pr-2 placeholder:text-[var(--body-200)]
@@ -68,44 +63,36 @@
                 </div>
 
                 <div class="flex items-center gap-1">
-                    <img
-                    src="../../assets/images/user.jpg"
-                    alt="user_img"
-                    class="w-7 rounded-full">
+                    <img src="../../assets/images/user.jpg" alt="user_img" class="w-7 h-7 object-cover rounded-full">
 
                     <div class="hidden lg:block">
-                        <p class="text-xs font-semibold text-body-800 whitespace-nowrap text-ellipsis overflow-hidden">Student Name</p>
+                        <p class="text-xs font-semibold text-body-800 whitespace-nowrap text-ellipsis overflow-hidden">
+                            Student Name</p>
                         <p class="text-xs text-body-300">Student email</p>
                     </div>
 
                     <div class="flex center lg:hidden">
-                        <span
-                        x-on:click="open = !open"
-                        x-text="open ? 'expand_less' : 'expand_more'"
-                        class="material-symbols-rounded text-body-800 cursor-pointer select-none hover:text-[var(--primary-700)]">
+                        <span x-on:click="open = !open" x-text="open ? 'expand_less' : 'expand_more'"
+                            class="material-symbols-rounded text-body-800 cursor-pointer select-none hover:text-[var(--primary-700)]">
                             expand_more
                         </span>
                     </div>
                 </div>
             </header>
 
-            <div
-            id="app"
-            class="mt-12 p-2 overflow-y-scroll relative
+            <div id="app" class="mt-12 p-2 overflow-y-scroll relative
             lg:grid lg:grid-cols-3 lg:overflow-y-visible lg:gap-1
             xl:mt-0 xl:grid-cols-7">
                 <!-- Additional styles in student.css -->
                 <div class="lg:col-span-2 lg:h-[100%] lg:overflow-y-scroll select-none
                 xl:col-span-5">
                     <h1 class="text-lg text-body-300 font-semibold">Dashboard</h1>
-                    
+
                     <div class="courses mt-2" id="dashboard-cards">
                         <!-- DASHBOARD CARD -->
                         <div class="grid grid-cols-4 gap-3 overflow-hidden bg-primary-300 text-white rounded h-28 p-4">
                             <div class="col-span-1 flex center">
-                                <span
-                                style="font-size: 3.6rem;"
-                                class="material-symbols-rounded">
+                                <span style="font-size: 3.6rem;" class="material-symbols-rounded">
                                     auto_stories
                                 </span>
                             </div>
@@ -115,7 +102,8 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-4 gap-3 overflow-hidden bg-secondary-300 rounded h-28 p-4 text-white">
+                        <div
+                            class="grid grid-cols-4 gap-3 overflow-hidden bg-secondary-300 rounded h-28 p-4 text-white">
                             <div class="col-span-1 flex center">
                                 <span style="font-size: 4.5rem;" class="material-symbols-rounded">
                                     bar_chart
@@ -141,7 +129,7 @@
                     </div>
 
                     <h1 class="text-lg text-body-300 font-semibold mt-8">Semester Courses</h1>
-                    
+
                     <div class="mt-2 overflow-x-scroll">
                         <table class="table w-[100%] whitespace-nowrap">
                             <thead>
@@ -158,10 +146,9 @@
                                     <td>Units</td>
                                     <td class="uppercase">Compulsory</td>
                                     <td>
-                                        <button
-                                        @click="courseOpen = true"
-                                        class="text-xs font-semibold p-[.3rem] rounded text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition"
-                                        type="button">
+                                        <button @click="courseOpen = true"
+                                            class="text-xs font-semibold p-[.3rem] rounded text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition"
+                                            type="button">
                                             View details
                                         </button>
                                     </td>
@@ -171,19 +158,12 @@
                     </div>
                 </div>
 
-                <div
-                x-show="open"
-                x-on:click.outside="open = false"
-                x-transition
-                id="details"
-                class="fixed top-12 right-0 bg-white flex flex-col gap-2 overflow-y-scroll w-80 p-2 shadow-lg
+                <div x-show="open" x-on:click.outside="open = false" x-transition id="details" class="fixed top-12 right-0 bg-white flex flex-col gap-2 overflow-y-scroll w-80 p-2 shadow-lg
                 lg:h-[100%] lg:relative lg:top-0 lg:shadow-none lg:p-1 lg:col-span-1 lg:w-auto
                 xl:col-span-2">
 
                     <div class="rounded border border-slate-400 flex flex-col gap-4 items-center px-4 py-16">
-                        <img
-                        src="../../assets/images/user.jpg" alt="user_img"
-                        class="w-32 rounded-full">
+                        <img src="../../assets/images/user.jpg" alt="user_img" class="w-32 rounded-full">
 
                         <div class="flex flex-col items-center gap-1 text-center">
                             <h1 class="text-body-800 text-2xl">
@@ -193,15 +173,13 @@
                                 Student Reg Number
                             </p>
                             <p class="text-slate-600 text-sm">
-                                Class: 
-                                <span
-                                class="font-semibold text-slate-800">
+                                Class:
+                                <span class="font-semibold text-slate-800">
                                     20XX-20YY
                                 </span>
                             </p>
-                            <p class="text-slate-600 text-sm">Advisor: 
-                                <span
-                                class="font-semibold text-slate-800">
+                            <p class="text-slate-600 text-sm">Advisor:
+                                <span class="font-semibold text-slate-800">
                                     Advisor Name
                                 </span>
                             </p>
@@ -226,7 +204,8 @@
                             XX days left for course registration, register now to access your results
                         </p>
                         <a href="./course-registration.html">
-                            <button type="button" class="btn bg-[var(--primary)] rounded text-white hover:bg-[var(--primary-700)] transition">
+                            <button type="button"
+                                class="btn bg-[var(--primary)] rounded text-white hover:bg-[var(--primary-700)] transition">
                                 Register Courses
                             </button>
                         </a>
@@ -235,30 +214,25 @@
                 </div>
 
                 <!-- This component is a popup that shows the full details of a course when the student clicks on the "view details button in the table of semester courses above. Please don't use a for loop here. Instead fetch the data everytime a button for a course is clicked" -->
-                <div
-                id="student-course-details-home"
-                x-show="courseOpen"
-                @click.outside="courseOpen = false"
-                x-transition
-                class="fixed h-screen w-screen top-0 right-0 p-4 bg-white flex flex-col gap-2 overflow-y-scroll z-[999]
+                <div id="student-course-details-home" x-show="courseOpen" @click.outside="courseOpen = false"
+                    x-transition class="fixed h-screen w-screen top-0 right-0 p-4 bg-white flex flex-col gap-2 overflow-y-scroll z-[999]
                 md:shadow-lg
                 lg:border lg:border-slate-400">
-                
+
                     <div class="flex center">
                         <span @click="courseOpen = false"
                             class="material-symbols-rounded select-none cursor-pointer font-semibold text-3xl text-red-500">
                             close
                         </span>
                     </div>
-                    
+
                     <div class="h-32 grid grid-cols-3 gap-2 border border-slate-300 shrink-0">
-                        <img
-                        class="col-span-1 h-full object-cover"
-                        src="../../assets/images/course_image_default.svg"
-                        alt="default_course_img">
-                
+                        <img class="col-span-1 h-full object-cover" src="../../assets/images/course_image_default.svg"
+                            alt="default_course_img">
+
                         <div class="col-span-2 flex flex-col justify-center">
-                            <p class="text-lg font-semibold text-body-800 select-none whitespace-nowrap text-ellipsis overflow-hidden">
+                            <p
+                                class="text-lg font-semibold text-body-800 select-none whitespace-nowrap text-ellipsis overflow-hidden">
                                 Course title goes here
                             </p>
                             <p class="flex items-center select-none">
@@ -271,7 +245,7 @@
                             </p>
                         </div>
                     </div>
-                
+
                     <div class="h-32 p-2 flex flex-col gap-2 shrink-0">
                         <p class="text-sm font-semibold text-body-300">
                             Marks distribution
@@ -305,12 +279,13 @@
                             </div>
                         </div>
                         <!-- If the course has practical -->
-                
+
                         <!-- If the course does not have practical -->
                         <div class="flex-col gap-3 hidden">
                             <div class="grid grid-cols-10">
                                 <span class="col-span-3 p-3 flex center font-bold bg-accent-200">30%</span>
-                                <span class="col-span-7 p-3 flex center font-bold bg-primary-200 rounded-r-full">70%</span>
+                                <span
+                                    class="col-span-7 p-3 flex center font-bold bg-primary-200 rounded-r-full">70%</span>
                             </div>
                             <div class="flex items-center gap-4">
                                 <div class="flex items-center gap-1 font-semibold text-body-500 text-sm">
@@ -325,24 +300,32 @@
                         </div>
                         <!-- If the course does not have practical -->
                     </div>
-                
+
                     <div style="height: calc(100vh - 22rem);" class="p-2 flex flex-col gap-2 shrink-0">
                         <p class="text-sm font-semibold text-body-300">Course Description</p>
                         <div class="border border-slate-300 rounded overflow-y-scroll p-1 text-sm text-body-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sint vitae ut earum aliquid dolor dicta,
-                            in saepe nesciunt assumenda. Debitis doloribus enim magni, expedita error tempora repellat eveniet officia!
-                            Ducimus eveniet, commodi veniam possimus beatae natus repudiandae perferendis aliquid quae unde veritatis
-                            recusandae sit doloribus repellendus, illum cumque ex. Laudantium, atque sint nisi cupiditate id porro
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sint vitae ut earum
+                            aliquid dolor dicta,
+                            in saepe nesciunt assumenda. Debitis doloribus enim magni, expedita error tempora repellat
+                            eveniet officia!
+                            Ducimus eveniet, commodi veniam possimus beatae natus repudiandae perferendis aliquid quae
+                            unde veritatis
+                            recusandae sit doloribus repellendus, illum cumque ex. Laudantium, atque sint nisi
+                            cupiditate id porro
                             voluptatibus eveniet et?
-                            Hic perferendis reiciendis deleniti architecto unde cum nam earum repudiandae ipsam harum autem ab quaerat
-                            optio dolores alias ea excepturi dolor, fuga a laborum? Natus iure enim tenetur culpa maiores.
-                            Amet perferendis reiciendis labore consequatur. Ullam, aspernatur tempora. Totam maxime officia saepe
-                            laboriosam optio velit recusandae, mollitia quibusdam odit labore repellendus nobis id beatae provident
+                            Hic perferendis reiciendis deleniti architecto unde cum nam earum repudiandae ipsam harum
+                            autem ab quaerat
+                            optio dolores alias ea excepturi dolor, fuga a laborum? Natus iure enim tenetur culpa
+                            maiores.
+                            Amet perferendis reiciendis labore consequatur. Ullam, aspernatur tempora. Totam maxime
+                            officia saepe
+                            laboriosam optio velit recusandae, mollitia quibusdam odit labore repellendus nobis id
+                            beatae provident
                             rerum quod deserunt cum animi.
                         </div>
                     </div>
                 </div>
-                <!--  -->                
+                <!--  -->
             </div>
         </section>
     </main>

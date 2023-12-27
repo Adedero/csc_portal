@@ -1161,6 +1161,11 @@ button:disabled:hover {
     border-bottom: 1px solid var(--body-50);
 }
 
+.table tr:hover {
+    background-color: var(--primary-50);
+    transition: .2s;
+}
+
 /* Form elements */
 .input {
     height: 2.5rem;

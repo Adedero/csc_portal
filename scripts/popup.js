@@ -57,3 +57,35 @@ export function onSidebarPopup(details) {
   })
 }
 
+export function onDetailsPopup(details) {
+  const sidebar = document.querySelector(details)
+  
+  function openPopup() {
+    sidebar.style.display = 'block';
+  }
+
+  function closePopup() {
+    sidebar.style.display = 'none';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth >= 1024) {
+      openPopup()
+      return
+    } else {
+      closePopup()
+      return
+    }
+  })
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      openPopup();
+      return
+    } else {
+      closePopup();
+      return
+    }
+  })
+}
+
