@@ -85,19 +85,18 @@
             <div id="app" class="mt-12 p-2 overflow-y-scroll relative
             xl:mt-0">
                 <!-- Additional styles in student.css -->
-                <div id="advisor-results" class="flex items-center text-sm font-semibold gap-4 text-body-200">
-                    <a href="./results.html" class="active">View Results</a>
-                    <a href="./update-result.html">Update Results</a>
-                    <a href="./upload-result.html">Upload Results</a>
-                    <a href="./cgpa-summary-result.html">CGPA Summary Result</a>
-                </div>
+                <a href="./results.html" class="flex items-center text-sm font-semibold text-body-200 hover:text-primary">
+                    <span class="material-symbols-rounded">arrow_left</span>
+                    View results
+                </a>
 
                 <div class="w-full mt-4">
                     <form action="" class="flex items-center gap-2 w-full relative md:w-[32rem]">
                         <label for="student-search" class="text-body-200 absolute top-3 left-1">
                             <span class="material-symbols-rounded">search</span>
                         </label>
-                        <input type="search" name="studentSearch" id="student-search" placeholder="Search..." class="border border-[var(--primary)] outline-none h-8  pl-8 text-body-300 w-full" >
+                        <input type="search" name="studentSearch" id="student-search" placeholder="Search..."
+                            class="border border-[var(--primary)] outline-none h-8  pl-8 text-body-300 w-full">
                         <div class="select">
                             <select name="searchBy" id="searchBy">
                                 <option value="">Search by</option>
@@ -111,46 +110,118 @@
                         </button>
                     </form>
 
-                    <form action="" class="flex items-end flex-wrap gap-1" id="result-options-form">
-                        <div class="select">
-                            <label for="session">Session</label>
-                            <select name="session" id="session">
-                                <option value="" class>Select session</option>
-                                <option value="2019-2020">2019-2020</option>
-                                <option value="2018-2019">2018-2019</option>
-                            </select>
-                        </div>
-
-                        <div class="select">
-                            <label for="semester">Semester</label>
-                            <select name="semester" id="semester" disabled>
-                                <option value="">Select semester</option>
-                                <option value="harmattan">Harmattan</option>
-                                <option value="rain">Rain</option>
-                            </select>
-                        </div>
-
-                        <div class="select">
-                            <label for="course">Course</label>
-                            <select name="course" id="course" disabled>
-                                <option value="">Select course</option>
-                                <option value="all">All courses</option>
-                                <option value="1">MTH 101</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" disabled class="btn-sm text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition rounded h-8">
-                            View Result
+                    <div>
+                        <button type="button"
+                            class="btn-sm text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition rounded h-8">
+                            Print
                         </button>
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="fixed bg-blue-100 w-80 h-60 left-[50%] top-[50%] -translate-x-[50%] -translate-y-[10%] text-body-800 p-2">
-                <p class="text-center">For development only!!!</p>
-                Click <a href="./all-semester-courses-result.html" class="text-danger font-semibold">here</a> to see the page when the user selects "All Courses" <br>
-                Click <a href="./course-result.html" class="text-danger font-semibold">here</a> to see the page when the user selects a single course. <br>
-                Navigate to the appropriate page and display the appropriate results when the submit button is clicked.
+                <div id="advisor-results-container-cgpa-summary" class="pb-4">
+                    <!-- Display this table if session = "all sessions" -->
+                    <table id="all-sessions" class="table w-full relative text-xs">
+                        <thead style="text-align: center;">
+                            <th class="w-5">S/N</th>
+                            <th>Reg. No.</th>
+                            <!-- Courses: Use the span element to loop through the courses -->
+                            <span>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                                <th>CSC XXX</th>
+                            </span>
+                            
+                            <th colspan="3">Current</th>
+                            <th colspan="3">Previous</th>
+                            <th colspan="3">Cummulative</th>
+                            <th>Remark</th>
+                        </thead>
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <!-- Course Units -->
+                            <span>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                                <th>2</th>
+                            </span>
+                            <th>TGP</th>
+                            <th>TNU</th>
+                            <th>GPA</th>
+                            <th>TGP</th>
+                            <th>TNU</th>
+                            <th>GPA</th>
+                            <th>TGP</th>
+                            <th>TNU</th>
+                            <th>GPA</th>
+                            <th></th>
+                        </thead>
+                        <tbody style="text-align: center;">
+                            <tr>
+                                <td style="text-align: left;">1</td>
+                                <td>20181112222</td>
+                                <span>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>E</td>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>E</td>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>D</td>
+                                    <td>E</td>
+                                </span>
+                                
+                                <td>148</td>
+                                <td>38</td>
+                                <td>4.55</td>
+
+                                <td>148</td>
+                                <td>38</td>
+                                <td>4.55</td>
+
+                                <td>148</td>
+                                <td>38</td>
+                                <td>4.55</td>
+
+                                <td>PASS</td>
+                            </tr>
+    
+
+                        </tbody>
+                    </table>
+                    <!--  -->
+                </div>
             </div>
 
             <div x-show="open" x-on:click.outside="open = false" x-transition id="advisor-details"
@@ -211,4 +282,5 @@
 <script type="module" src="../../main.js"></script>
 <script type="module" src="../../scripts/advisor.js"></script>
 <script type="module" src="../../scripts/advisor-results.js"></script>
+
 </html>

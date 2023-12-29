@@ -1,9 +1,11 @@
-import { onSidebarPopup } from './popup.js'
 import { barChart, lineChart } from './studentChart.js'
 import { onDetailsPopup } from './popup.js'
 
-if (document.getElementById('full-student-details')) {onDetailsPopup('#full-student-details')}
+/* import { onImageUpload } from './image-upload.js'
 
+onImageUpload('#profile-image', '#change-image-form input[type="file"]','#change-image-form input[type="submit"]') */
+
+if (document.getElementById('full-student-details')) {onDetailsPopup('#full-student-details')}
 
 
 const radioBtns = document.querySelectorAll('input[name="chartType"]')
@@ -31,6 +33,25 @@ function getData() {
     const data = [4.32, 3.55, 4.1, 4.43, 3.86]
     return  data
 }
+
+const studentSearchForm = document.querySelector('#student-search-form')
+const studentSearch = document.querySelector('#student-search')
+studentSearchForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if (studentSearch.value === '') return
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

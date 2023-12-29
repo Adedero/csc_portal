@@ -1147,6 +1147,13 @@ button:disabled:hover {
     font-size: .9rem;
 }
 
+.table thead:nth-child(2) {
+    background-color: var(--primary-900);
+    text-align: center;
+    color: white;
+}
+
+
 .table thead {
     background-color: var(--primary-50);
     text-align: left;
@@ -1157,14 +1164,17 @@ button:disabled:hover {
     padding: .5rem;
 }
 
+
 .table tbody tr td {
     border-bottom: 1px solid var(--body-50);
 }
 
-.table tr:hover {
+.table tbody tr:hover {
     background-color: var(--primary-50);
     transition: .2s;
 }
+
+
 
 /* Form elements */
 .input {

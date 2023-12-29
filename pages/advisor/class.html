@@ -95,27 +95,26 @@
                     </div>
 
                     <div id="class-list-container" class="border border-slate-300 rounded px-3 py-3 overflow-y-scroll mt-4 grid grid-rows-7 lg:grid-rows-6 lg:gap-2">
-                        <div class="row-span-1 flex items-center gap-1 lg:flex-col lg:items-start lg:row-span-1">
+
+                        <form action="" id="student-search-form" class="row-span-1 flex items-center gap-1 bg-white lg:flex-col lg:items-start lg:row-span-1">
                             <div class="select">
-                                <select name="searchOption" id="select" class="rounded lg:h-8">
+                                <select name="searchOption" id="select" title="select search criteria" class="rounded lg:h-8 xl:w-full">
                                     <option value="">Search by...</option>
                                     <option value="name">Name</option>
                                     <option value="regNum">Reg. Number</option>
                                 </select>
                             </div>
 
-                            <form action=""
-                            class="flex items-center rounded border border-[var(--primary)] w-full md:w-auto lg:w-full">
-                                <input
-                                type="search"
-                                name="searchStudent" id="student-search" class="rounded-l h-[1.9rem] px-2 outline-none text-base text-body-500 w-[80%]">
-                                <button
-                                type="submit"
-                                class="w-[20%] bg-[var(--primary)] text-white text-sm font-semibold h-[1.9rem] rounded-tr rounded-br hover:bg-[var(--primary-700)] transition grid center">
+                            <div class="flex items-center rounded border border-[var(--primary)] w-full md:w-auto lg:w-full">
+                                <input type="search" name="searchStudent" id="student-search"
+                                    class="rounded-l h-[1.9rem] px-2 outline-none text-base text-body-500 w-[80%]">
+                                <button type="submit"
+                                    class="w-[20%] bg-[var(--primary)] text-white text-sm font-semibold h-[1.9rem] rounded-tr rounded-br hover:bg-[var(--primary-700)] transition grid center">
                                     <span class="material-symbols-rounded">search</span>
                                 </button>
-                            </form> 
-                        </div>
+                            </div>
+                        </form> 
+                    
 
                         <ul class="row-span-6 mt-4 border-b border-b-[var(--black-100)] overflow-y-scroll lg:row-span-5">
                             <li
@@ -146,181 +145,6 @@
                                     </div>
                                 </div>
                             </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li @click="detailsOpen = true" class="flex items-center gap-3 p-2 border-t border-t-[var(--black-100)] cursor-pointer transition hover:rounded hover:bg-[var(--primary-50)]
-                                                        lg:grid lg:grid-cols-4 ">
-                                <div class="shrink-0 grid center
-                                                            lg:col-span-1">
-                                    <img src="../../assets/images/user.jpg" alt="student_img" class="w-10 h-10 object-cover rounded-full">
-                                </div>
-                            
-                                <div class="list-div w-full 
-                                                            lg:col-span-3">
-                                    <h1 class="font-semibold text-body-300 text-base overflow-hidden whitespace-nowrap text-ellipsis">
-                                        Student Full Name
-                                    </h1>
-                                    <p class="text-sm text-body-300">
-                                        Student ID
-                                    </p>
-                                    <div class="flex text-xs text-body-300">
-                                        <p class="pr-2 border-r border-r-[var(--black-100)]">
-                                            <span class="font-semibold">500</span> Level
-                                        </p>
-                                        <p class="pl-2 border-l border-l-[var(--black-100)] uppercase">
-                                            <span class="font-semibold">4.55</span> CGPA
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -329,7 +153,7 @@
                 x-show="detailsOpen"
                 id="full-student-details"
                 class="fixed top-12 left-[50%] -translate-x-[50%] w-[100dvw] h-[100dvh] pb-16 overflow-y-scroll border border-slate-300 bg-white
-                lg:relative lg:col-span-3 lg:w-auto lg:rounded lg:pb-4 lg:top-0 mt-[.5rem]">
+                lg:relative lg:col-span-3 lg:w-auto lg:rounded lg:pb-4 lg:top-0 mt-[.5rem] lg:h-[unset]">
                     <div class="flex gap-4 items-center p-4 bg-primary-50 rounded-t h-36 cursor-context-menu relative">
                         <span
                         @click="detailsOpen = false"
@@ -409,7 +233,6 @@
 
                 </div>
             </div>
-
 
             <div x-show="open" x-on:click.outside="open = false" x-transition id="advisor-details"
                 class="fixed top-12 right-0 bg-white flex flex-col gap-2 overflow-y-scroll w-80 p-2 shadow-lg z-[999]">
