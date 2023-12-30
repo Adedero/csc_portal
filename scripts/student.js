@@ -3,4 +3,4 @@ import { onImageUpload } from './image-upload.js'
 
 if (document.getElementById('student-course-details')) {onSidebarPopup('#student-course-details')}
 
-onImageUpload('#image', '#select-profile-image', 'input[type="submit"]')
+onImageUpload('[data-image="user"]', '#select-profile-image', 'input[type="submit"]')
