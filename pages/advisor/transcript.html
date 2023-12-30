@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/logo.svg" />
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles/advisor/advisor.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <title>Advisor - Transcript</title>
+</head>
+
+<body x-data="{navIsOpen: false, open: false, formOpen: false}">
+    <div id="overlay"></div>
+
+    <main class="xl:flex">
+        <nav x-show="navIsOpen" x-transition x-on:click.outside="navIsOpen = false"
+            class="w-[16rem] h-screen overflow-hidden flex fixed flex-col gap-2 pl-2 pr-1 bg-white top-0 z-[999] shadow-2xl
+        xl:flex xl:overflow-y-scroll xl:relative xl:w-[16rem] shrink-0 xl:h-screen xl:shadow-none xl:border-r xl:border-r-slate-300">
+
+            <div class="xl:hidden">
+                <span x-on:click="navIsOpen = false"
+                    class="material-symbols-rounded cursor-pointer text-body-800 mt-3 hover:text-red-500 hover:font-semibold">
+                    close
+                </span>
+            </div>
+
+            <div class="h-12 pt-1 mb-2">
+                <div id="logo-component"></div>
+            </div>
+
+            <div id="nav">
+                <a href="./index.html"><span class="material-symbols-rounded">home</span>Home</a>
+                <a href="./class.html"><span class="material-symbols-rounded">group</span>Class</a>
+                <a href="./results.html"><span class="material-symbols-rounded">school</span>Results</a>
+                <a href="./transcript.html" class="active"><span class="material-symbols-rounded">auto_stories</span>Transcripts</a>
+                <a href="./profile.html"><span class="material-symbols-rounded">account_circle</span>Profile</a>
+                <a href="./settings.html"><span class="material-symbols-rounded">settings</span>Settings</a>
+                <a href="../../index.html"><span class="material-symbols-rounded">logout</span>Logout</a>
+            </div>
+        </nav>
+
+        <section class="grow">
+            <header class="h-12 bg-white flex items-center justify-between p-2 fixed w-screen top-0 z-50
+            xl:relative xl:w-full">
+                <div class="flex items-center gap-2 xl:hidden">
+                    <span x-on:click="navIsOpen = true"
+                        class="material-symbols-rounded text-body-800 cursor-pointer hover:text-[var(--primary-700)] transition">
+                        menu
+                    </span>
+                    <img src="../../assets/images/logo.svg" alt="logo" width="26">
+                </div>
+
+                <div class="relative">
+                    <label for="search"
+                        class="material-symbols-rounded overflow-hidden absolute left-1 top-[.3rem] text-body-400 text-[1.4rem]">
+                        search
+                    </label>
+                    <input type="search" id="search" placeholder="Search..."
+                        class="rounded bg-[var(--primary-50)] text-body-400 outline-none h-8 w-full pl-7 pr-2 placeholder:text-[var(--body-200)] md:w-[30rem]">
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <img src="../../assets/images/user_2.jpg" alt="user_img" class="w-7 h-7 object-cover rounded-full">
+
+                    <div class="hidden lg:block">
+                        <p class="text-xs font-semibold text-body-800 whitespace-nowrap text-ellipsis overflow-hidden">
+                            Advisor Name</p>
+                        <p class="text-xs text-body-300">Advisor email</p>
+                    </div>
+
+                    <div class="flex center">
+                        <span x-on:click="open = !open" x-text="open ? 'expand_less' : 'expand_more'"
+                            class="material-symbols-rounded text-body-800 cursor-pointer select-none hover:text-[var(--primary-700)]">
+                            expand_more
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Display this part if there are registered courses -->
+            <div id="app" class="mt-12 p-2 overflow-y-scroll relative
+            xl:mt-0">
+                <!-- Additional styles in student.css -->
+                <h1 class="text-lg text-body-300 font-semibold">Transcipts</h1>
+                <span class="font-semibold text-sm text-primary">Click 
+                    <a target="_blank" href="./generated-transcript.html"
+                        class="text-secondary">
+                        here
+                    </a> 
+                        to see the generated transcript sample
+                    </span>
+
+                <div class="w-full mt-4 lg:w-[70%]">
+                    <form action="" class="flex items-center gap-2 w-full relative md:w-[32rem]">
+                        <label for="student-search" class="text-body-200 absolute top-3 left-1">
+                            <span class="material-symbols-rounded">search</span>
+                        </label>
+                        <input type="search" name="studentSearch" id="student-search" placeholder="Search student..."
+                            class="border border-[var(--primary)] outline-none h-8  pl-8 text-body-300 w-full">
+                        <div class="select">
+                            <select name="searchBy" id="searchBy">
+                                <option value="">Search by</option>
+                                <option value="name">Name</option>
+                                <option value="regNum">Reg. Number</option>
+                            </select>
+                        </div>
+                        <button type="submit"
+                            class="btn-sm text-white bg-[var(--primary)] hover:bg-[var(--primary-700)] transition rounded h-8">
+                            Search
+                        </button>
+                    </form>   
+                </div>
+
+                <div class="w-full lg:flex lg:gap-2">
+                    <div style="height:calc(100dvh - 12rem)" class="w-full overflow-y-scroll lg:w-[70%]">
+                        <table class="table w-full whitespace-nowrap cursor-context-menu">
+                            <thead>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Reg. No.</th>
+                                <th class="hidden md:table-cell">Level</th>
+                                <th class="hidden md:table-cell">CGPA</th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="../../assets/images/user.jpg" alt="student_img"
+                                            class="min-w-10 min-h-10 h-10 w-10 object-cover rounded-full">
+                                    </td>
+                                    <td>Amalagu Chikezie Simon</td>
+                                    <td>20181097185</td>
+                                    <td class="hidden md:table-cell">500</td>
+                                    <td class="hidden md:table-cell">4.55</td>
+                                    <td>
+                                        <button
+                                        @click="formOpen = true"
+                                        type="button"
+                                            class="btn-sm text-white bg-[var(--accent)] hover:bg-[var(--accent-700)] transition rounded h-8">
+                                            Generate
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div
+                    x-show="formOpen"
+                    class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-white rounded shadow-lg border border-slate-300 p-5 w-80 z-20
+                    lg:relative lg:top-0 lg:left-0 lg:-translate-x-0 lg:-translate-y-0 lg:shadow-none lg:flex-1">
+                        <form action="" class="grid gap-5">
+                            <div class="flex flex-col gap-4">
+                                <h1 class="font-semibold text-body-300 text-xl">Generate Transcript</h1>
+
+                                <div class="flex justify-between items-center">
+                                    <label for="name" class="text-secondary-800 font-semibold text-sm">Name:</label>
+                                    <input type="text" id="name" value="Amalagu Chikezie"
+                                        class="border px-1 h-6 border-[var(--primary-100)] rounded text-body-300 font-semibold outline-none w-[75%] text-sm" readonly>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <label for="regNum" class="text-secondary-800 font-semibold text-sm">Reg. No.:</label>
+                                    <input type="text" id="regNum" value="20181097185"
+                                        class="border px-1 h-6 border-[var(--primary-100)] rounded text-body-300 font-semibold outline-none w-[75%] text-sm" readonly>
+                                </div>
+
+                            </div>
+
+                            <div
+                            x-data="{single: false, range: false}"
+                            class="flex flex-col gap-2">
+                                <h1 class="font-semibold text-body-300">Options</h1>
+
+                                <div class="flex items-center gap-1">
+                                    <input
+                                    @click="single=false, range=false"
+                                    type="radio" name="transcriptType" id="full" value="full" checked>
+                                    <label for="full" class="text-secondary-800 font-semibold text-sm">Full</label>
+                                    <span class="text-sm text-body-300">(From year 1 to current year)</span>
+                                </div>
+
+                                <div
+                                class="flex items-center gap-1">
+                                    <input
+                                    @click="single=true, range=false"
+                                    type="radio" name="transcriptType" id="single" value="single">
+                                    <label for="single" class="text-secondary-800 font-semibold text-sm">Single Year</label>
+                                    <div class="select flex-1">
+                                        <select name="year" id="year" class="w-full" x-bind:disabled="!single">
+                                            <option value="1">Year 1</option>
+                                            <option value="2">Year 2</option>
+                                            <option value="3">Year 3</option>
+                                            <option value="4">Year 4</option>
+                                            <option value="5">Year 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-1 flex-wrap">
+                                    <input
+                                    @click="single=false, range=true"
+                                    type="radio" name="transcriptType" id="range" value="range">
+                                    <label for="range" class="text-secondary-800 font-semibold text-sm">Range</label>
+                                    
+                                    <div class="w-full">
+                                        <div class="select">
+                                            <label for="startYear">From</label>
+                                            <select name="year" id="startYear" x-bind:disabled="!range">
+                                                <option value="1">Year 1</option>
+                                                <option value="2">Year 2</option>
+                                                <option value="3">Year 3</option>
+                                                <option value="4">Year 4</option>
+                                                <option value="5">Year 5</option>
+                                            </select>
+                                        </div>
+                                        <span class="font-semibold">-</span>
+
+                                        <div class="select">
+                                            <label for="endYear">To</label>
+                                            <select name="year" id="endYear" x-bind:disabled="!range">
+                                                <option value="1">Year 1</option>
+                                                <option value="2">Year 2</option>
+                                                <option value="3">Year 3</option>
+                                                <option value="4">Year 4</option>
+                                                <option value="5">Year 5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 items-center lg:flex-col lg:gap-0">
+                                <button type="submit" class="btn text-white bg-[var(--accent)] hover:bg-[var(--accent-700)] transition rounded flex-1 lg:w-full">Generate</button>
+
+                                <button @click="formOpen=false" type="button" class="btn bg-red-500 text-white hover:bg-red-700 hover:text-white transition rounded flex-1 lg:w-full">Cancel</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div x-show="open" x-on:click.outside="open = false" x-transition id="advisor-details"
+                class="fixed top-12 right-0 bg-white flex flex-col gap-2 overflow-y-scroll w-80 p-2 shadow-lg z-[999]">
+
+                <div class="rounded border border-slate-400 flex flex-col gap-4 items-center px-4 py-16">
+                    <img src="../../assets/images/user_2.jpg" alt="user_img"
+                        class="w-32 h-32 object-cover rounded-full">
+
+                    <div class="flex flex-col items-center gap-1 text-center">
+                        <h1 class="text-body-800 text-2xl">
+                            Advisor Full Name
+                        </h1>
+                        <p class="text-slate-800">
+                            Staff ID
+                        </p>
+                        <p class="text-slate-600 text-sm">
+                            Class:
+                            <span class="font-semibold text-slate-800">
+                                20XX-20YY
+                            </span>
+                        </p>
+                        <p class="text-slate-600 text-sm">Current Level:
+                            <span class="font-semibold text-slate-800 uppercase">
+                                500 level
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-primary-50 rounded flex items-center justify-center p-1 gap-4">
+                    <div class="flex flex-col items-center justify-end">
+                        <p class="text-secondary-800 text-lg">20XX/20YY</p>
+                        <p class="text-body-300">session</p>
+                    </div>
+                    <span class="bg-secondary-800 w-[1px] h-10"></span>
+                    <div class="flex flex-col items-center justify-end">
+                        <p class="text-secondary-800 text-lg">Harmattan</p>
+                        <p class="text-body-300">semester</p>
+                    </div>
+                </div>
+
+                <div
+                    class="notice-card bg-primary-50 rounded w-full h-full pl-4 pr-14 pt-10 pb-4 flex flex-col justify-between items-start relative ">
+                    <p class="text-lg text-secondary-800 z-10">
+                        XX days left for course registration, please remind the students to register before the time
+                        runs out!
+                    </p>
+                    <img src="../../assets/images/frame.svg" alt="frame" class="absolute bottom-0 right-0 ">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script type="module" src="../../main.js"></script>
+<script type="module" src="../../scripts/advisor.js"></script>
+<script type="module" src="../../scripts/advisor-results.js"></script>
+
+</html>
