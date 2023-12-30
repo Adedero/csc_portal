@@ -32,6 +32,11 @@
         }
 
         @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
             title {
                 display: none;
             }
@@ -49,13 +54,13 @@
             }
 
             table thead  th:first-of-type {
-                background-color: black;
+                background-color: black !important;
             }
         }
     </style>
 </head>
 
-<body class="grid center">
+<body class="md:flex md:place-content-center">
     <header class="absolute left-2 top-2 bg-black-50 px-3 rounded border border-black hover:bg-[var(--black-100)]">
         <button type="button" onclick="printResult()">Print</button>
     </header>
