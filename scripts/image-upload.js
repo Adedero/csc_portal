@@ -9,5 +9,6 @@ export function onImageUpload(image, select, submit) {
         const image = selectImage.files[0]
         const newUrl = URL.createObjectURL(image)
         profileImage.src = newUrl
+        selectImage.value = ""
     }) 
 }
