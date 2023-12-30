@@ -1325,7 +1325,7 @@ button:disabled:hover {
 }
 
 #overlay {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -1917,6 +1917,10 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+
+.visible{
+  visibility: visible;
 }
 
 .fixed{
