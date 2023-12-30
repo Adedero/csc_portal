@@ -12,7 +12,7 @@ const radioBtns = document.querySelectorAll('input[name="chartType"]')
 const ctx = document.getElementById('bar-chart')
 const ctx2 = document.getElementById('line-chart');
 
-barChart(getData())
+if (ctx) barChart(getData())
 
 radioBtns.forEach(btn => btn.addEventListener('change', function() {
 
@@ -36,10 +36,14 @@ function getData() {
 
 const studentSearchForm = document.querySelector('#student-search-form')
 const studentSearch = document.querySelector('#student-search')
-studentSearchForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    if (studentSearch.value === '') return
-})
+
+if (studentSearchForm) {
+    studentSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        if (studentSearch.value === '') return
+    })
+}
+
 
 
 

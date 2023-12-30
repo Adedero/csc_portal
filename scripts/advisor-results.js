@@ -28,5 +28,8 @@ function viewResults() {
 }
 
 
-form.addEventListener('change', adjustFields)
-submitBtn.addEventListener('click', viewResults)
+if (document.querySelector('#result-options-form')) {
+    form.addEventListener('change', adjustFields)
+    submitBtn.addEventListener('click', viewResults)
+}
+

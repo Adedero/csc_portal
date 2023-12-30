@@ -12,6 +12,14 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,400,0,0" />
     <title>Advisor - Results</title>
+    <style>
+        @media screen and (max-width: 367.5px ) {
+            #search-label {
+                top: .3rem
+            }
+        }
+        
+    </style>
 </head>
 
 <body x-data="{navIsOpen: false, open: false}">
@@ -93,12 +101,12 @@
                 </div>
 
                 <div class="w-full mt-4">
-                    <form action="" class="flex items-center gap-2 w-full relative md:w-[34rem]">
-                        <label for="student-search" class="text-body-200 absolute top-3 left-1">
+                    <form action="" class="flex items-center gap-x-2 w-full relative flex-wrap md:w-[34rem]">
+                        <label for="student-search" class="text-body-200 absolute top-3 left-1" id="search-label">
                             <span class="material-symbols-rounded">search</span>
                         </label>
-                        <input type="search" name="studentSearch" id="student-search" placeholder="Search..." class="border border-[var(--primary)] outline-none h-8  pl-8 text-body-300 flex-1">
-                        <div class="select flex-1">
+                        <input type="search" name="studentSearch" id="student-search" placeholder="Search..." class="border border-[var(--primary)] outline-none h-8 pl-8 text-body-300 grow">
+                        <div class="select block grow">
                             <select name="searchBy" id="searchBy" class="w-full">
                                 <option value="">Search by</option>
                                 <option value="name">Name</option>
@@ -111,8 +119,8 @@
                         </button>
                     </form>
 
-                    <form action="" class="flex items-end flex-wrap gap-2 md:w-[34rem]" id="result-options-form">
-                        <div class="select flex-1">
+                    <form action="" class="flex items-end flex-wrap gap-x-2 md:w-[34rem]" id="result-options-form">
+                        <div class="select grow">
                             <label for="session">Session</label>
                             <select name="session" id="session" class="w-full">
                                 <option value="" class>Select session</option>
@@ -121,7 +129,7 @@
                             </select>
                         </div>
 
-                        <div class="select flex-1">
+                        <div class="select grow">
                             <label for="semester">Semester</label>
                             <select name="semester" id="semester" class="w-full" disabled>
                                 <option value="">Select semester</option>
@@ -130,7 +138,7 @@
                             </select>
                         </div>
 
-                        <div class="select flex-1">
+                        <div class="select grow">
                             <label for="course">Course</label>
                             <select name="course" id="course" class="w-full" disabled>
                                 <option value="">Select course</option>
