@@ -1,7 +1,22 @@
 export function showOverlay(element) {
-    window.addEventListener('DOMContentLoaded', function() {
-        const overlay = document.getElementById(element);
-        overlay.style.display = 'flex';
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById(element)
+        overlay.style.display = 'flex'
+
+        window.addEventListener('load', function() {
+            const overlay = document.getElementById(element);
+            overlay.style.display = 'none';
+        });
+    })
+
+    window.addEventListener('beforeunload', function() {
+        const overlay = document.getElementById(element)
+        overlay.style.display = 'flex'
+
+        window.addEventListener('load', function() {
+            const overlay = document.getElementById(element);
+            overlay.style.display = 'none';
+        });
     });
 }
 
